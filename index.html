@@ -417,16 +417,17 @@
                     var duration = 1500;
                     var start = performance.now();
 
+                    // Always format with comma to prevent width shift
+                    function formatNum(n) {
+                        return n > 999 ? n.toLocaleString() : String(n);
+                    }
+
                     function tick(now) {
                         var elapsed = now - start;
                         var progress = Math.min(elapsed / duration, 1);
                         var eased = 1 - Math.pow(1 - progress, 3);
                         var current = Math.floor(eased * num);
-                        if (current > 999) {
-                            el.textContent = prefix + current.toLocaleString() + suffix;
-                        } else {
-                            el.textContent = prefix + current + suffix;
-                        }
+                        el.textContent = prefix + formatNum(current) + suffix;
                         if (progress < 1) requestAnimationFrame(tick);
                     }
 

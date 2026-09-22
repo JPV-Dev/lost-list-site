@@ -384,7 +384,8 @@ h1, h2, h3, h4 {
 .hero-stat {
     padding: 0 32px;
     border-left: 3px solid var(--rose);
-    min-width: 160px;
+    min-width: 180px;
+    text-align: center;
 }
 
 .hero-stat:first-child {
