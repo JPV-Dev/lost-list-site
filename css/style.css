@@ -288,6 +288,17 @@ h1, h2, h3, h4 {
     animation: pulse-dot 2s ease-in-out infinite;
 }
 
+.hero-eyebrow {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
 @keyframes pulse-dot {
     0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(46, 107, 79, 0.3); }
     50% { opacity: 0.7; box-shadow: 0 0 0 6px transparent; }
