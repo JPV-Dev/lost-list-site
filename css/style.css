@@ -393,7 +393,7 @@ h1, h2, h3, h4 {
 
 .hero-stat:last-child {
     border-right: 3px solid var(--rose);
-    padding-right: 0;
+    padding-right: 32px;
 }
 
 .hero-stat-number {
