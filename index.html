@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lost List — Home Inventory for Insurance Claims</title>
-    <meta name="description" content="Lost List helps homeowners catalog their belongings and navigate insurance claims after a disaster. Accurate inventories, faster settlements.">
+    <title>Lost List — AI-Powered Home Inventory for Insurance Claims</title>
+    <meta name="description" content="Lost List uses advanced AI to rebuild complete home inventories after disaster. Smarter claims, faster settlements.">
     <link rel="icon" type="image/png" href="images/lost-list-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- Ambient background canvas -->
+    <canvas id="neural-bg" class="neural-canvas"></canvas>
+
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
-            <a href="#hero" class="nav-logo">Lost List</a>
+            <a href="#hero" class="nav-logo">
+                <img src="images/lost-list-logo.png" alt="Lost List" class="nav-logo-img">
+                <span>Lost List</span>
+            </a>
             <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -25,6 +31,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#technology">Technology</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -32,91 +39,211 @@
 
     <!-- Hero -->
     <section class="hero" id="hero">
-        <div class="hero-overlay"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-grid-overlay"></div>
         <div class="hero-content">
-            <img src="images/lost-list-logo.png" alt="Lost List" class="hero-logo">
-            <div class="hero-divider"></div>
-            <p class="hero-name">Lost List</p>
-            <p class="hero-tagline">Home Inventory for Insurance Claims</p>
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Powered by Advanced AI
+            </div>
+            <h1 class="hero-title">
+                Your Home.<br>
+                <span class="gradient-text">Rebuilt by AI.</span>
+            </h1>
+            <p class="hero-subtitle">Lost List uses artificial intelligence to reconstruct complete home inventories after disaster — room by room, item by item. Smarter documentation. Faster settlements. Nothing forgotten.</p>
+            <div class="hero-cta-group">
+                <a href="#how-it-works" class="btn btn-primary">
+                    See How It Works
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="#contact" class="btn btn-ghost">Get Started</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">10,000+</span>
+                    <span class="hero-stat-label">Items Cataloged</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">3×</span>
+                    <span class="hero-stat-label">Faster Claims</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">99%</span>
+                    <span class="hero-stat-label">Accuracy Rate</span>
+                </div>
+            </div>
         </div>
-        <a href="#about" class="scroll-indicator" aria-label="Scroll down">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M7 10l5 5 5-5"/>
-            </svg>
-        </a>
+        <div class="hero-logo-float">
+            <img src="images/lost-list-logo.png" alt="" class="hero-logo-img">
+        </div>
     </section>
 
     <!-- About -->
-    <section class="section section--cream" id="about">
+    <section class="section" id="about">
         <div class="container">
             <div class="section-header fade-in">
-                <span class="section-label">About</span>
-                <h2>Rebuilding Starts with<br>Knowing What You Had</h2>
+                <span class="section-label">About Lost List</span>
+                <h2>Insurance Claims<br><span class="gradient-text">Reimagined</span></h2>
+                <p class="section-subtitle">After a disaster, most families remember less than 40% of what they owned. We fix that.</p>
             </div>
             <div class="about-grid fade-in">
-                <div class="about-text">
-                    <p class="lead">When disaster strikes, the last thing you should worry about is remembering every item you owned.</p>
-                    <p>Lost List helps homeowners and insurance professionals build comprehensive, room-by-room inventories of personal property. Whether you're recovering from a fire, flood, or other loss, we use AI-powered tools and expert guidance to ensure nothing gets overlooked.</p>
-                    <p>The result: accurate claim documentation that leads to faster, fairer settlements — so you can focus on what matters most.</p>
+                <div class="about-card">
+                    <div class="about-card-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="url(#grad1)" stroke-width="2"/><path d="M12 16l3 3 5-6" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="grad1" x1="4" y1="4" x2="28" y2="28"><stop stop-color="#C41E3A"/><stop offset="1" stop-color="#C7893E"/></linearGradient></defs></svg>
+                    </div>
+                    <h3>The Problem</h3>
+                    <p>After a fire, flood, or theft, insurance companies require detailed inventories. Families are left trying to remember every item they owned — while still processing their loss. Most claims are drastically under-documented.</p>
                 </div>
-                <div class="about-aside">
-                    <div class="stat-card">
-                        <span class="stat-number">90%</span>
-                        <span class="stat-label">of homeowners underestimate their belongings</span>
+                <div class="about-card">
+                    <div class="about-card-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4v6m0 12v6M4 16h6m12 0h6" stroke="url(#grad2)" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="16" r="6" stroke="url(#grad2)" stroke-width="2"/><defs><linearGradient id="grad2" x1="4" y1="4" x2="28" y2="28"><stop stop-color="#C41E3A"/><stop offset="1" stop-color="#C7893E"/></linearGradient></defs></svg>
                     </div>
-                    <div class="stat-card">
-                        <span class="stat-number">3×</span>
-                        <span class="stat-label">faster claim processing with proper documentation</span>
+                    <h3>Our Solution</h3>
+                    <p>Lost List's AI analyzes your home profile — property type, rooms, lifestyle, household composition — and generates a comprehensive inventory using machine learning models trained on real household data.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 20l4-8 4 4 4-6 4 10" stroke="url(#grad3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="24" height="24" rx="4" stroke="url(#grad3)" stroke-width="2"/><defs><linearGradient id="grad3" x1="4" y1="4" x2="28" y2="28"><stop stop-color="#C41E3A"/><stop offset="1" stop-color="#C7893E"/></linearGradient></defs></svg>
                     </div>
+                    <h3>The Result</h3>
+                    <p>A complete, professional-grade inventory document ready for your insurance company. Every room covered, every item accounted for, every detail documented — in a fraction of the time it would take manually.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- How It Works -->
-    <section class="section section--white" id="how-it-works">
+    <section class="section section--dark" id="how-it-works">
         <div class="container">
             <div class="section-header fade-in">
-                <span class="section-label">How It Works</span>
-                <h2>Simple Steps to<br>Complete Coverage</h2>
+                <span class="section-label section-label--light">How It Works</span>
+                <h2 class="heading--light">Three Steps to a<br><span class="gradient-text">Complete Inventory</span></h2>
             </div>
-            <div class="steps-grid fade-in">
-                <div class="step">
-                    <span class="step-number">01</span>
-                    <h3>Tell Us About Your Home</h3>
-                    <p>Enter basic details about your property — rooms, layout, and lifestyle. Our system builds a personalized starting point.</p>
+            <div class="steps-timeline fade-in">
+                <div class="step-card">
+                    <div class="step-number-ring">
+                        <span>01</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Describe Your Home</h3>
+                        <p>Enter your property details — square footage, room count, occupant profiles, lifestyle factors. Our system builds a unique model of your household.</p>
+                        <div class="step-tags">
+                            <span class="tag">Property Analysis</span>
+                            <span class="tag">Occupant Profiling</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="step">
-                    <span class="step-number">02</span>
-                    <h3>AI Fills in the Gaps</h3>
-                    <p>Our AI analyzes your home profile and suggests items you likely owned, room by room. Review, adjust, and add anything we missed.</p>
+                <div class="step-connector"></div>
+                <div class="step-card">
+                    <div class="step-number-ring">
+                        <span>02</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>AI Generates Your Inventory</h3>
+                        <p>Our AI engine cross-references your profile against comprehensive item databases, predicting what you owned with remarkable accuracy. Review, adjust, and confirm — room by room.</p>
+                        <div class="step-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Predictive Modeling</span>
+                            <span class="tag">Real-Time</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="step">
-                    <span class="step-number">03</span>
-                    <h3>Export Your Claim</h3>
-                    <p>Generate a detailed, professional inventory document ready to submit to your insurance company. Every item accounted for.</p>
+                <div class="step-connector"></div>
+                <div class="step-card">
+                    <div class="step-number-ring">
+                        <span>03</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Export & Submit</h3>
+                        <p>Generate a polished, insurance-ready document. Organized by room, categorized by type, with estimated values. Submit directly to your claims adjuster.</p>
+                        <div class="step-tags">
+                            <span class="tag">Auto-Formatted</span>
+                            <span class="tag">Claims-Ready</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Technology -->
+    <section class="section" id="technology">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Technology</span>
+                <h2>Built on<br><span class="gradient-text">Cutting-Edge AI</span></h2>
+                <p class="section-subtitle">The same large language model technology powering the world's most advanced AI systems — purpose-built for insurance inventory reconstruction.</p>
+            </div>
+            <div class="tech-grid fade-in">
+                <div class="tech-card">
+                    <div class="tech-icon">🧠</div>
+                    <h3>Large Language Models</h3>
+                    <p>Advanced neural networks that understand context, patterns, and relationships between household items, rooms, and lifestyles.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">📸</div>
+                    <h3>Computer Vision</h3>
+                    <p>Upload photos of your space — even from social media or old albums — and our AI identifies and catalogs visible items automatically.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🔄</div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Statistical models trained on real household data predict what items belong in each room based on your home's unique profile.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">⚡</div>
+                    <h3>Real-Time Processing</h3>
+                    <p>Cloud-native architecture processes entire homes in minutes, not days. Streaming AI responses let you watch your inventory build in real time.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🔒</div>
+                    <h3>Enterprise Security</h3>
+                    <p>Your data is encrypted at rest and in transit. SOC 2 compliant infrastructure. Your personal information never trains our models.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">📊</div>
+                    <h3>Continuous Learning</h3>
+                    <p>Our models improve with every inventory processed, incorporating feedback to deliver increasingly accurate predictions over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-inner fade-in">
+                <h2>Ready to Rebuild<br><span class="gradient-text">Smarter?</span></h2>
+                <p>Join the insurance professionals and homeowners who trust AI to get it right.</p>
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    Get Started Today
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact -->
-    <section class="section section--deep" id="contact">
+    <section class="section section--dark" id="contact">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-label section-label--light">Contact</span>
-                <h2 class="heading--light">Let's Get Started</h2>
-                <p class="section-subtitle section-subtitle--light">Ready to build your inventory? We're here to help.</p>
+                <h2 class="heading--light">Let's <span class="gradient-text">Connect</span></h2>
+                <p class="section-subtitle section-subtitle--light">Questions? Ready to get started? Reach out — we'd love to hear from you.</p>
             </div>
-            <div class="contact-info-centered fade-in">
-                <div class="contact-item">
+            <div class="contact-cards fade-in">
+                <a href="mailto:info@lostlist.com" class="contact-card">
+                    <div class="contact-card-icon">✉</div>
                     <h3>Email</h3>
-                    <a href="mailto:info@lostlist.com">info@lostlist.com</a>
-                </div>
-                <div class="contact-item">
+                    <p>info@lostlist.com</p>
+                </a>
+                <a href="tel:+19492336621" class="contact-card">
+                    <div class="contact-card-icon">📞</div>
                     <h3>Phone</h3>
-                    <a href="tel:+19492336621">949.233.6621</a>
-                </div>
+                    <p>949.233.6621</p>
+                </a>
             </div>
         </div>
     </section>
@@ -125,14 +252,106 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
-                <p class="footer-logo">Lost List</p>
+                <div class="footer-brand">
+                    <img src="images/lost-list-logo.png" alt="Lost List" class="footer-logo-img">
+                    <span class="footer-logo-text">Lost List</span>
+                </div>
                 <p class="footer-copy">&copy; 2026 Lost List. All rights reserved.</p>
+                <p class="footer-tagline">AI-Powered Home Inventory</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scroll for anchor links
+        // =============================================
+        // Neural Network Background Animation
+        // =============================================
+        (function() {
+            var canvas = document.getElementById('neural-bg');
+            var ctx = canvas.getContext('2d');
+            var particles = [];
+            var particleCount = 60;
+            var maxDist = 150;
+            var animFrame;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            function Particle() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 2 + 1;
+            }
+
+            function init() {
+                resize();
+                particles = [];
+                for (var i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                for (var i = 0; i < particles.length; i++) {
+                    var p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(196, 30, 58, 0.3)';
+                    ctx.fill();
+
+                    for (var j = i + 1; j < particles.length; j++) {
+                        var p2 = particles[j];
+                        var dx = p.x - p2.x;
+                        var dy = p.y - p2.y;
+                        var dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < maxDist) {
+                            var opacity = (1 - dist / maxDist) * 0.15;
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.strokeStyle = 'rgba(199, 137, 62, ' + opacity + ')';
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                animFrame = requestAnimationFrame(animate);
+            }
+
+            // Only run on hero section visibility
+            var heroEl = document.getElementById('hero');
+            var heroObserver = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting) {
+                    animate();
+                } else {
+                    cancelAnimationFrame(animFrame);
+                }
+            }, { threshold: 0 });
+
+            init();
+            heroObserver.observe(heroEl);
+            window.addEventListener('resize', function() {
+                resize();
+            });
+        })();
+
+        // =============================================
+        // Smooth scroll
+        // =============================================
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -147,7 +366,7 @@
             });
         });
 
-        // Sticky nav background on scroll
+        // Sticky nav
         var nav = document.getElementById('nav');
         window.addEventListener('scroll', function() {
             if (window.scrollY > 60) {
@@ -157,14 +376,14 @@
             }
         });
 
-        // Mobile menu toggle
+        // Mobile menu
         var toggle = document.querySelector('.nav-toggle');
         toggle.addEventListener('click', function() {
             var isOpen = nav.classList.toggle('nav--open');
             this.setAttribute('aria-expanded', isOpen);
         });
 
-        // Fade-in on scroll (Intersection Observer)
+        // Fade-in on scroll
         if ('IntersectionObserver' in window) {
             var observer = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
@@ -173,7 +392,7 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.15 });
+            }, { threshold: 0.1 });
 
             document.querySelectorAll('.fade-in').forEach(function(el) {
                 observer.observe(el);
@@ -183,6 +402,40 @@
                 el.classList.add('is-visible');
             });
         }
+
+        // Animate stat numbers on scroll
+        var statsAnimated = false;
+        var statsObserver = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting && !statsAnimated) {
+                statsAnimated = true;
+                document.querySelectorAll('.hero-stat-number').forEach(function(el) {
+                    var text = el.textContent;
+                    var num = parseInt(text.replace(/[^0-9]/g, ''));
+                    var suffix = text.replace(/[0-9,]/g, '');
+                    var prefix = text.match(/^[^0-9]*/)[0];
+                    var duration = 1500;
+                    var start = performance.now();
+
+                    function tick(now) {
+                        var elapsed = now - start;
+                        var progress = Math.min(elapsed / duration, 1);
+                        var eased = 1 - Math.pow(1 - progress, 3);
+                        var current = Math.floor(eased * num);
+                        if (current > 999) {
+                            el.textContent = prefix + current.toLocaleString() + suffix;
+                        } else {
+                            el.textContent = prefix + current + suffix;
+                        }
+                        if (progress < 1) requestAnimationFrame(tick);
+                    }
+
+                    requestAnimationFrame(tick);
+                });
+            }
+        }, { threshold: 0.5 });
+
+        var heroStats = document.querySelector('.hero-stats');
+        if (heroStats) statsObserver.observe(heroStats);
     </script>
 
 </body>
