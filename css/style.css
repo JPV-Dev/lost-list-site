@@ -151,12 +151,19 @@ h1, h2, h3, h4 {
     border-radius: 8px;
 }
 
-.nav-logo span {
+.nav-logo-text {
     font-family: var(--font-heading);
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 800;
     color: var(--text-dark);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.nav-logo-dot {
+    color: #f22d2d;
+    font-weight: 800;
+    margin: 0 1px;
 }
 
 .nav-links {
