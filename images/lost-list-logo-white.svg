@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 850">
+  <g fill="#fff">
+    <!-- Outer roof / house shape -->
+    <path d="M244 614V262L497 16v69L292 282v284h198v48H244z"/>
+    <path d="M522 23l239 235v82h-103v-47h55L522 91V23z"/>
+
+    <!-- Inner left arrow -->
+    <path d="M327 535V317l48-47v219h115v46H327z"/>
+
+    <!-- Inner right arrow -->
+    <path d="M522 614V173l48 47v268h154v46H522z"/>
+
+    <!-- Bottom bars -->
+    <path d="M244 567h198v47H244z"/>
+    <path d="M522 567h203v47H522z"/>
+  </g>
+
+  <!-- Red dot by icon -->
+  <circle cx="771" cy="590" r="23" fill="#f22d2d"/>
+
+  <!-- LOST LIST -->
+  <g
+    fill="#fff"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="168"
+    font-weight="700"
+    letter-spacing="2"
+  >
+    <text x="91" y="817">LOST</text>
+    <text x="588" y="817">LIST</text>
+  </g>
+
+  <!-- Red separator dot -->
+  <circle cx="547" cy="803" r="15" fill="#f22d2d"/>
+</svg>
