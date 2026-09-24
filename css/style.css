@@ -260,9 +260,10 @@ h1, h2, h3, h4 {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 700px;
+    flex: 0 0 auto;
+    max-width: 780px;
     padding: 0 var(--container-padding);
-    margin: 0 auto 0 calc((100vw - var(--container-width)) / 2 + var(--container-padding));
+    margin: 0 auto 0 max(var(--container-padding), calc((100vw - var(--container-width)) / 2 + var(--container-padding)));
 }
 
 .hero-eyebrow {
@@ -391,20 +392,24 @@ h1, h2, h3, h4 {
     letter-spacing: 0.02em;
 }
 
-/* Floating logo */
+/* Logo sits in the space beside the copy, and scales down instead of sliding under it */
 .hero-logo-float {
-    position: absolute;
-    right: 8%;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
     z-index: 1;
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: max(24px, 4vw);
+    padding-left: 32px;
     opacity: 0.18;
     pointer-events: none;
 }
 
 .hero-logo-img {
-    width: 500px;
-    height: 500px;
+    width: min(500px, 100%);
+    height: auto;
     animation: float 6s ease-in-out infinite;
 }
 
@@ -855,13 +860,12 @@ h1, h2, h3, h4 {
     .hero-logo-float {
         display: flex;
         position: relative;
-        right: auto;
-        top: auto;
-        transform: none;
-        opacity: 1;
+        flex: 0 0 auto;
         order: -1;
         width: min(210px, 54vw);
         margin: 0 auto;
+        padding-left: 0;
+        opacity: 1;
         pointer-events: none;
     }
 
