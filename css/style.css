@@ -187,6 +187,23 @@ h1, h2, h3, h4 {
 .nav-links a:hover { color: var(--text-dark); }
 .nav-links a:hover::after { width: 100%; }
 
+.nav-links a.nav-signin {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--green-mid);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.nav-links a.nav-signin::after { display: none; }
+
+.nav-links a.nav-signin:hover {
+    color: var(--white);
+    background: var(--green-dark);
+}
+
 /* Mobile toggle */
 .nav-toggle {
     display: none;
@@ -678,6 +695,13 @@ h1, h2, h3, h4 {
     margin-bottom: 36px;
 }
 
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
 
 /* ============================================
    Contact Cards (dark section)
@@ -729,6 +753,21 @@ h1, h2, h3, h4 {
     font-weight: 500;
 }
 
+.contact-signin {
+    margin-top: 20px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-signin a {
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.contact-signin a:hover { color: var(--gold-light); }
+
 
 /* ============================================
    Footer
@@ -775,6 +814,14 @@ h1, h2, h3, h4 {
     color: rgba(255, 255, 255, 0.2);
     letter-spacing: 0.05em;
 }
+
+.footer-signin {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+}
+
+.footer-signin:hover { color: var(--white); }
 
 
 /* ============================================
@@ -838,6 +885,13 @@ h1, h2, h3, h4 {
 
     .nav--open .nav-links { display: flex; }
     .nav-toggle { display: block; }
+
+    .nav-signin-item { display: flex; }
+
+    .nav-links a.nav-signin {
+        justify-content: center;
+        width: 100%;
+    }
 
     /* Start on the stacked hero mark. The compact header lockup appears once you scroll. */
     .nav-logo {
@@ -932,7 +986,8 @@ h1, h2, h3, h4 {
         padding-right: 0;
     }
 
-    .hero-cta-group {
+    .hero-cta-group,
+    .cta-actions {
         flex-direction: column;
         align-items: center;
     }
