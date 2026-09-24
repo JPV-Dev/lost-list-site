@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 260">
-  <!-- House icon scaled down -->
-  <g fill="#1a3a2a" transform="translate(0,0) scale(0.38)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 320">
+  <!-- House/LL icon — shifted and scaled to fit left side -->
+  <g fill="#1a3a2a" transform="translate(-180, -10) scale(0.52)">
     <path d="M244 614V262L497 16v69L292 282v284h198v48H244z"/>
     <path d="M522 23l239 235v82h-103v-47h55L522 91V23z"/>
     <path d="M327 535V317l48-47v219h115v46H327z"/>
@@ -8,12 +8,14 @@
     <path d="M244 567h198v47H244z"/>
     <path d="M522 567h203v47H522z"/>
   </g>
-  <circle cx="296" cy="224" r="9" fill="#f22d2d"/>
-  
+  <!-- Red dot next to icon -->
+  <circle cx="435" cy="300" r="12" fill="#f22d2d"/>
+
   <!-- LOST.LIST text -->
-  <g fill="#1a3a2a" font-family="Arial, Helvetica, sans-serif" font-size="168" font-weight="700" letter-spacing="2">
-    <text x="340" y="200">LOST</text>
-    <text x="837" y="200">LIST</text>
+  <g fill="#1a3a2a" font-family="Arial, Helvetica, sans-serif" font-size="200" font-weight="700" letter-spacing="4">
+    <text x="480" y="240">LOST</text>
+    <text x="1100" y="240">LIST</text>
   </g>
-  <circle cx="796" cy="186" r="15" fill="#f22d2d"/>
+  <!-- Red separator dot -->
+  <circle cx="1055" cy="224" r="18" fill="#f22d2d"/>
 </svg>
