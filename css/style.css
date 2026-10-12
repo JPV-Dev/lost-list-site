@@ -12,7 +12,6 @@
 :root {
     /* Palette: white-forward with green/red accents */
     --rose: #C41E3A;
-    --rose-light: #D94F63;
     --rose-glow: rgba(196, 30, 58, 0.15);
     --gold: #C7893E;
     --gold-light: #D9A45E;
@@ -24,7 +23,6 @@
     --white: #FFFFFF;
     --off-white: #FAFAF8;
     --cream: #F7F5F2;
-    --light-gray: #F0EEEB;
     --border: rgba(0, 0, 0, 0.08);
     --border-hover: rgba(0, 0, 0, 0.14);
     --text-dark: #1A1A1A;
@@ -42,6 +40,39 @@
     --radius-sm: 10px;
 
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Numeric scale aliases — match app token naming convention (brand-600, mark-500, etc.) */
+    --brand-50: #f3f7f5;
+    --brand-100: #e5f0ea;
+    --brand-200: #c6dfd2;
+    --brand-300: #98c5ae;
+    --brand-400: #5ea486;
+    --brand-500: #3d8b68;   /* = --green-accent */
+    --brand-600: #2e6b4f;   /* = --green-mid (primary action) */
+    --brand-700: #1a3d2e;   /* = --green-dark */
+    --brand-800: #143226;
+    --brand-900: #0f2b1f;   /* = --green-deep */
+    --brand-950: #081610;
+    --mark-50: #fdf2f4;
+    --mark-100: #fbe4e8;
+    --mark-200: #f6c9d1;
+    --mark-300: #ee9aab;
+    --mark-400: #d94f63;    /* = --rose-light */
+    --mark-500: #c41e3a;    /* = --rose (primary accent) */
+    --mark-600: #a91b33;
+    --mark-700: #8e162b;
+    --mark-800: #761425;
+    --mark-900: #611322;
+    --mark-950: #3a0a14;
+    --sky-50: #f0f9ff;
+    --sky-100: #e0f2fe;
+    --sky-200: #bae6fd;
+    --sky-300: #7dd3fc;
+    --sky-400: #38bdf8;
+    --sky-500: #0ea5e9;     /* AI/photo scanning mode accent */
+    --sky-600: #0284c7;
+    --sky-700: #0369a1;
+    --sky-950: #082f49;
 }
 
 html {
